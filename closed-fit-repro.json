@@ -1,0 +1,83 @@
+{
+  "commands": [
+    {
+      "command": "sketch.create",
+      "params": {
+        "plane": "XY",
+        "name": "Source"
+      }
+    },
+    {
+      "command": "sketch.spline.fit_point",
+      "params": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            30,
+            0
+          ],
+          [
+            24,
+            8
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "periodic": true
+      }
+    },
+    {
+      "command": "sketch.finish",
+      "params": {}
+    },
+    {
+      "command": "sketch.create",
+      "params": {
+        "plane": {
+          "x_dir": [
+            0.8,
+            0,
+            0.6
+          ],
+          "y_dir": [
+            0,
+            1,
+            0
+          ]
+        },
+        "name": "Projection"
+      }
+    },
+    {
+      "command": "sketch.project",
+      "params": {
+        "refs": [
+          {
+            "sketch": "Source",
+            "curve": "s1"
+          }
+        ],
+        "projection_link": false
+      }
+    },
+    {
+      "command": "sketch.finish",
+      "params": {}
+    },
+    {
+      "command": "solid.extrude",
+      "params": {
+        "distance": 5
+      }
+    }
+  ]
+}
